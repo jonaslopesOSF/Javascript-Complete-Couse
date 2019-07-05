@@ -2,6 +2,14 @@ var database = [
     {
         username: "jonas",
         password: "supersecret"
+    },
+    {
+        username: "sally",
+        password: "123"
+    },
+    {
+        username: "ingrid",
+        password: "777"
     }
 ];
 
@@ -13,15 +21,29 @@ var newsFeed = [
     {
         username: "Sally",
         timeline: "Javascript is sooooo coooool."
+    },
+    {
+        username: "Gray",
+        timeline: "I'm with shame."
     }
 ];
 
+function isUserValid(username, password) {
+    for (var i=0; i < database.length; i++) {
+        if(database[i].username === username &&
+            database[i].password === password){
+                return true;
+        }
+    }
+    return false;
+}
+
 function signIn(username, password){
-    if(username === database[0].username && 
-       password === database[0].password){
+    
+    if(isUserValid(username, password)){
         console.log(newsFeed);
     } else {
-        alert("Sorry, wroong username or password or both")
+        alert("Sorry, wroong username or password or both"); 
     }
 }
 
