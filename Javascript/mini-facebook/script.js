@@ -28,14 +28,14 @@ var newsFeed = [
     }
 ];
 
-function isUserValid(username, password) {
-    for (var i=0; i < database.length; i++) {
-        if(database[i].username === username &&
-            database[i].password === password){
-                return true;
-        }
-    }
-    return false;
+const isUserValid = (username, password) => {
+    let match = false;
+    database.forEach((user) => {
+        if (username === user.username && password === user.password) {
+            match = true
+        } 
+    })
+    return match
 }
 
 function signIn(username, password){
