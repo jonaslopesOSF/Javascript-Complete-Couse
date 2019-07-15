@@ -3,9 +3,9 @@ const a = function() {
     const b = function() {
         console.log('b', this)
         const c = {
-        hi: function() {
-            console.log('c', this)
-        }
+            hi: function() {
+                console.log('c', this)
+            }
         }
         c.hi()
     }
